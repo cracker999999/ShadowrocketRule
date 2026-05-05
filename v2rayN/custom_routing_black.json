@@ -1,0 +1,27 @@
+{
+  "domainStrategy": "IPIfNonMatch",
+  "rules": [
+    {
+      "type": "field",
+      "domain": [
+        "geosite:cn"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "ip": [
+        "geoip:cn",
+        "geoip:private"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:geolocation-!cn"
+      ],
+      "outboundTag": "proxy"
+    }
+  ]
+}
